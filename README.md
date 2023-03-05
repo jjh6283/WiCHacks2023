@@ -1,5 +1,6 @@
 # gAInz
 ## WiCHacks 2023 Project
+## Domain Name: gainzz.tech
 ### Inspiration
 Our inspiration for gAInz was our love for working out and eating healthy. Especially with diet culture and misinformation it is hard to know what is the best workout and meal plan for you and your goals. We wanted to create a product that allowed people of any skill level to be able to create a workout or meal plan that works best for them.
 ### What it Does
