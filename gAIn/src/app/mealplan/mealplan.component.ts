@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import {Router} from "@angular/router";
+import {ResponseService} from "../response.service";
 
 
 
@@ -10,8 +11,7 @@ import {Router} from "@angular/router";
 })
 export class MealplanComponent {
 
-  constructor(private router: Router) {
-  }
+
 
   restrictionState!: boolean// true for other box is being displayed
   otherRestriction!: String | null
@@ -28,9 +28,12 @@ export class MealplanComponent {
   healthConcerns!: String | null
 
   phoneNumber!: String|null
+  response: String
   misc!: String | null
 
-
+  constructor(private router: Router, private rServe: ResponseService, ) {
+    this.response = ""
+  }
 
   handleRestriction(res: String) : void {
     this.restriction = res
@@ -89,6 +92,12 @@ export class MealplanComponent {
       navigation.push($myParam);
     }
     this.router.navigate(navigation);
+
+    if(this.phoneNumber){
+      this.rServe.getResponse(this.phoneNumber, sentence).subscribe(response => {
+        this.response = response
+      })
+    }
 
     return sentence
   }

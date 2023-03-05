@@ -51,15 +51,16 @@ function sendSMS(message, recipientNumber) {
 //functionality
 const request = require('request');
 
-app.get('/response/:phone', function(req, res) {
+app.get('/response/:phone/:prompt', function(req, res) {
   let options = {
     json: true
   };
   let phonenumber = req.params.phone;
+  let prompt = req.params.prompt
   request.get(options, () => {
-    getPlan("hello").then((resp)=> {
+    getPlan(prompt).then((resp) => {
       res.send(resp)
-      sendSMS(resp, phonenumber)} )
+      sendSMS(resp, phonenumber)})
   });
 });
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import {ResponseService} from "../response.service";
 
 @Component({
   selector: 'app-fitness-form',
@@ -7,10 +8,6 @@ import { Router } from '@angular/router'
   styleUrls: ['./fitness-form.component.css']
 })
 export class FitnessFormComponent {
-
-  constructor(private router: Router) {
-  }
-
   skillLevel = "";
   upperBodyDays = "";
   lowerBodyDays = "";
@@ -22,6 +19,12 @@ export class FitnessFormComponent {
   goal = "";
 
   phoneNumber = "";
+  response: String;
+
+  constructor(private router: Router, private rServe: ResponseService) {
+    this.response = ""
+  }
+
   selectSkillLevel(value:string): void{
     this.skillLevel = value;
   }
@@ -72,6 +75,10 @@ export class FitnessFormComponent {
       navigation.push($myParam);
     }
     this.router.navigate(navigation);
+
+    this.rServe.getResponse(this.phoneNumber, sentence).subscribe(response => {
+      this.response = response
+    })
 
     return sentence;
   }
