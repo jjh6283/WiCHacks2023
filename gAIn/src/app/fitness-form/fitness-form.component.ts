@@ -32,7 +32,7 @@ export class FitnessFormComponent {
     this.cardioDays = value;
   }
 
-  submitClicked(){
+  submitClicked($myParam: string = ''){
     // @ts-ignore
     this.healthConcerns = document.getElementById("healthConcerns").value;
     // @ts-ignore
@@ -55,5 +55,11 @@ export class FitnessFormComponent {
 
     if(this.upperBodyDays =="1") {sentence += " day a week with reps";}
     else{sentence += " days a week with reps";}
+
+    const navigation: string[] = ['/resultpage'];
+    if($myParam.length) {
+      navigation.push($myParam);
+    }
+    this.router.navigate(navigation);
   }
 }
