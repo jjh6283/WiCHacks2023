@@ -51,17 +51,18 @@ function sendSMS(message, recipientNumber) {
 //functionality
 const request = require('request');
 
-app.get('/response/:phone', function(req, res) {
-  let options = {
-    json: true
-  };
-  let phonenumber = req.params.phone;
-  request.get(options, () => {
-    getPlan("hello").then((resp)=> {
-      res.send(resp)
-      sendSMS(resp, phonenumber)} )
+  app.get('/response/:phone/:prompt', function(req, res) {
+    let options = {
+      json: true
+    };
+    let phonenumber = req.params.phone;
+    let prompt = req.params.prompt
+    request.get(options, () => {
+      getPlan(prompt).then((resp) => {
+        res.send(resp)
+        sendSMS(resp, phonenumber)})
+    });
   });
-});
 
 // start our server on port 8080
 app.listen(8080,() => {
