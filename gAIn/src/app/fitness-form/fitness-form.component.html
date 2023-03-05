@@ -1,59 +1,72 @@
 <h1>Let's make a fitness plan!</h1>
 
-<form action="/action_page.php" method="get">
+  <div class = "skillsDev">
+    <label >What skill level are you? :</label>
 
-  <label for="skill">What skill level are you? :</label>
-  <input list="skill" name="skills" id="skills">
-  <datalist id="skill">
-    <option value="Beginner">
-    <option value="Intermediate">
-    <option value="Advanced">
-  </datalist><br><br>
+    <select #skills (change) = "selectSkillLevel(skills.value)">
+      <option default></option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select><br><br>
+
+  </div>
+
+  <div class = "uppersDev">
+    <label>How many days do you want to do upper body? :</label>
+    <select #uppers (change) = "selectUpperBodyDays(uppers.value)">
+      <option default></option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select><br><br>
+  </div>
+
+  <div class = "lowersDev">
+    <label >How many days do you want to do lower body? :</label>
+    <select #lowers (change) = "selectLowerBodyDays(lowers.value)">
+      <option default></option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select><br><br>
+  </div>
+
+  <div class = "cardioDev">
+    <label >How many days do you want to do Cardio? :</label>
+    <select  #cardio (change) = "selectCardioDays(cardio.value)">
+      <option default></option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select><br><br>
+  </div>
+
+  <div class = "ageDiv">
+    <label>How old are you?):</label>
+    <input type="text" id="age" name="ages"><br><br>
+  </div>
+
+  <div class = "healthConcernsDiv">
+    <label>Do you have any health concerns (you can list multiple):</label>
+    <input type="text" id="healthConcerns" name="healthConcerns"><br><br>
+  </div>
+
+<button type="button" (click)="submitClicked()">Submit</button>
 
 
-  <label for="upper">How many days do you want to do upper body? :</label>
-  <input list="upper" name="uppers" id="uppers">
-  <datalist id="upper">
-    <option value="0">
-    <option value="1">
-    <option value="2">
-    <option value="3">
-    <option value="4">
-    <option value="5">
-    <option value="6">
-    <option value="7">
-  </datalist><br><br>
-
-  <label for="lower">How many days do you want to do lower body? :</label>
-  <input list="lower" name="lowers" id="lowers">
-  <datalist id="lower">
-    <option value="0">
-    <option value="1">
-    <option value="2">
-    <option value="3">
-    <option value="4">
-    <option value="5">
-    <option value="6">
-    <option value="7">
-  </datalist><br><br>
-
-  <label for="cardio">How many days do you want to do cardio? :</label>
-  <input list="cardio" name="cardio" id="cardios">
-  <datalist id="cardio">
-    <option value="0">
-    <option value="1">
-    <option value="2">
-    <option value="3">
-    <option value="4">
-    <option value="5">
-    <option value="6">
-    <option value="7">
-  </datalist><br><br>
-
-  <label for="healthConcerns">Do you have any health concerns (you can list multiple):</label>
-  <input type="text" id="healthConcerns" name="healthConcersn"><br><br>
-
-
-  <input type="submit" value="Submit">
-
-</form>
