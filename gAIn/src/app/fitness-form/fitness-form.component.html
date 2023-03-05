@@ -14,6 +14,19 @@
 
   </div>
 
+  <div class = "goalDev">
+    <label >What is your fitness goal? </label>
+
+    <select #goals (change) = "selectGoal(goals.value)">
+      <option default></option>
+      <option value="maintain weight">Maintain Weight</option>
+      <option value="lose weight">Lose Weight</option>
+      <option value="gain weight">Gain Weight</option>
+      <option value="body recomposition">Body Recomposition</option>
+    </select><br><br>
+
+  </div>
+
   <div class = "uppersDev">
     <label>How many days do you want to do upper body? </label>
     <select #uppers (change) = "selectUpperBodyDays(uppers.value)">

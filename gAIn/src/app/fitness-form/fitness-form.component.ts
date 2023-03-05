@@ -19,8 +19,13 @@ export class FitnessFormComponent {
 
   age = "";
 
+  goal = "";
   selectSkillLevel(value:string): void{
     this.skillLevel = value;
+  }
+
+  selectGoal(value:string): void{
+    this.goal = value
   }
   selectUpperBodyDays(value:string): void{
     this.upperBodyDays = value;
@@ -42,7 +47,8 @@ export class FitnessFormComponent {
 
     if(this.skillLevel == "beginner"){ sentence += "a "}
     else{ sentence += "an "}
-    sentence += this.skillLevel +" workout plan that is in depth for each day for someone who is " + this.age;
+    sentence += this.skillLevel +" workout plan that is in depth for each day for someone who is trying to " + this.goal
+      + ", is "+ this.age;
 
     if(this.healthConcerns!= ""){sentence+= " has the following health concerns: "+ this.healthConcerns;}
 
