@@ -37,7 +37,7 @@ export class FitnessFormComponent {
     this.cardioDays = value;
   }
 
-  submitClicked($myParam: string = ''){
+  submitClicked($myParam: string = '') : String {
     // @ts-ignore
     this.healthConcerns = document.getElementById("healthConcerns").value;
     // @ts-ignore
@@ -67,5 +67,7 @@ export class FitnessFormComponent {
       navigation.push($myParam);
     }
     this.router.navigate(navigation);
+
+    return sentence;
   }
 }
