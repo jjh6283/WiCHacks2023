@@ -7,6 +7,7 @@ import { FitnessFormComponent } from "./fitness-form/fitness-form.component";
 import { AppRoutingModule } from './app-routing.module';
 import { MealplanComponent } from './mealplan/mealplan.component';
 import { FormsModule } from "@angular/forms";
+import {RouterOutlet} from "@angular/router";
 import { ResultpageComponent } from './resultpage/resultpage.component';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ResultpageComponent } from './resultpage/resultpage.component';
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterOutlet
   ],
   providers: [],
   bootstrap: [AppComponent]
