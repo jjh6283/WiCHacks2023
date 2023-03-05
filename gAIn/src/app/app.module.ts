@@ -7,6 +7,7 @@ import { FitnessFormComponent } from "./fitness-form/fitness-form.component";
 import { AppRoutingModule } from './app-routing.module';
 import { MealplanComponent } from './mealplan/mealplan.component';
 import { FormsModule } from "@angular/forms";
+import { ResultpageComponent } from './resultpage/resultpage.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from "@angular/forms";
     HomeComponent,
     MealplanComponent,
     HomeComponent,
-    FitnessFormComponent
+    FitnessFormComponent,
+    ResultpageComponent
   ],
   imports: [
     BrowserModule,
