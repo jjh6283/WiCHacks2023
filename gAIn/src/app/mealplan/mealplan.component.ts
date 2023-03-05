@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import {Router} from "@angular/router";
 
 
 
@@ -8,33 +9,26 @@ import { Component } from '@angular/core'
   styleUrls: ['./mealplan.component.css']
 })
 export class MealplanComponent {
-  restrictionState: boolean// true for other box is being displayed
-  otherRestriction: String | null
-  restriction: String | null
-  goal: String | null
-  level: String | null
-  age: number | null
-  weight: number | null
-  height: number | null
-  genderState: boolean
-  otherGender: String | null
-  gender: String | null
-  misc: String | null
 
-  constructor() {
-    this.restrictionState = false
-    this.otherRestriction = null
-    this.restriction = null
-    this.goal = null
-    this.level = null
-    this.age = null
-    this.weight = null
-    this.height = null
-    this.genderState = false
-    this.otherGender = null
-    this.gender = null
-    this.misc = null
+  constructor(private router: Router) {
   }
+
+  restrictionState!: boolean// true for other box is being displayed
+  otherRestriction!: String | null
+  restriction!: String | null
+  goal!: String | null
+  level!: String | null
+  age!: number | null
+  weight!: number | null
+  height!: number | null
+  genderState!: boolean
+  otherGender!: String | null
+  gender!: String | null
+
+  healthConcerns!: String | null
+  misc!: String | null
+
+
 
   handleRestriction(res: String) : void {
     this.restriction = res
@@ -54,13 +48,44 @@ export class MealplanComponent {
     this.genderState = this.gender == 'other';
   }
 
-  createPrompt() : String {
-    let prompt = 'Create a meal plan for a '
-    if(this.gender === null){
-      this.gender = this.otherGender
-    }
+  createPrompt($myParam: string = '') : String {
+    // @ts-ignore
+    this.age = document.getElementById("age").value;
+    // @ts-ignore
+    this.height = document.getElementById("height").value;
+    // @ts-ignore
+    this.weight = document.getElementById("weight").value;
 
-    console.log(this.restriction, this.otherRestriction, this.gender, this.otherGender)
-    return prompt
+    // @ts-ignore
+    this.healthConcerns = document.getElementById("healthConcerns").value;
+
+    if(this.restriction == "other"){ // @ts-ignore
+      this.otherRestriction = document.getElementById("otherRestriction").value;}
+
+    if(this.gender == "other"){ // @ts-ignore
+      this.otherGender = document.getElementById("otherGender").value;}
+
+    var sentence:string = "Create me a weekly meal plan for a "+this.level+ " " +this.height+", " +this.weight+" pound, "+this.age+" year old ";
+
+    if(this.gender == "other"){sentence+=this.otherGender;}
+    else{sentence+=this.gender;}
+    sentence+=" that is trying to "+ this.goal+" ";
+
+
+    if (this.restriction == "other"){sentence+= "that is "+ this.otherRestriction+" ";}
+    else if (this.restriction!=null){sentence+="that is " + this.restriction;}
+
+    if(this.healthConcerns != ""){sentence+= " and has the following health concerns: "+ this.healthConcerns}
+
+    sentence+=" (please list the dietary information)"
+
+    console.log(sentence);
+    const navigation: string[] = ['/resultpage'];
+    if($myParam.length) {
+      navigation.push($myParam);
+    }
+    this.router.navigate(navigation);
+
+    return sentence
   }
 }

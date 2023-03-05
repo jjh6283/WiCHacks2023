@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-fitness-form',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./fitness-form.component.css']
 })
 export class FitnessFormComponent {
+
+  constructor(private router: Router) {
+  }
 
   skillLevel = "";
   upperBodyDays = "";
@@ -51,7 +55,5 @@ export class FitnessFormComponent {
 
     if(this.upperBodyDays =="1") {sentence += " day a week with reps";}
     else{sentence += " days a week with reps";}
-
   }
-
 }
