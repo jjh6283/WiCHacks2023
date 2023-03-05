@@ -1,0 +1,106 @@
+<div class="meal-plan page">
+  <h3>
+    Curate a Personal Meal Plan for the Week
+  </h3>
+
+  <div class="input-group mb-3">
+    <!-- dietary restrictions -->
+    Select your dietary restrictions
+    <select #restrictions name="restriction" (change)="handleRestriction(restrictions.value)">
+      <option></option>
+      <option value="vegan">Vegan</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="pescatarian">Pescatarian</option>
+      <option value="other">Other, please specify</option>
+    </select>
+
+    <!-- show input box to enter other option -->
+    <div *ngIf="restrictionState" >
+      <form>
+        <input name="otherRestriction"/>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="input-group mb-3">
+    <!-- fitness goals -->
+    Select your fitness goal
+    <select #goals (change)="handleGoal(goals.value)">
+      <option></option>
+      <option value="maintain weight">Maintain Weight</option>
+      <option value="lose weight">Lose Weight</option>
+      <option value="gain weight">Gain Weight</option>
+      <option value="recomp">Body Recomposition</option>
+    </select>
+  </div>
+
+  <div class="input-group mb-3">
+    <!-- fitness goals -->
+    Select your activity level
+    <select #levels (change)="handleLevel(levels.value)">
+      <option></option>
+      <option value="sedentary">Active</option>
+      <option value="moderately active">Moderately Active</option>
+      <option value="active">Active</option>
+      <option value="very active">Very Active</option>
+    </select>
+  </div>
+
+  <div class="input-group mb-3">
+    <!-- specs -->
+    Enter your physical specs
+    <input placeholder="Age" >
+    <input placeholder="Height">
+    <input placeholder="Weight">
+  </div>
+
+  <div class="input-group mb-3">
+    <!-- gender -->
+    Select your gender identity
+    <select #genders name="gender" (change)="handleGender(genders.value)">
+      <option></option>
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+      <option value="non-binary">Non-Binary</option>
+      <option value="other">Other, please specify</option>
+    </select>
+
+    <!-- show input box to enter other option -->
+    <div *ngIf="genderState">
+      <form>
+        <input [(ngModel)]="gender" name="otherGender"/>
+      </form>
+    </div>
+  </div>
+
+  <form>
+    Enter any health info that may affect your meal needs <br>
+    Please delimit with commas
+    <input placeholder="Example: pcos, etc.">
+  </form>
+
+
+  <button type="submit" (click)="createPrompt()">
+    Submit
+  </button>
+</div>
+
+
+<!-- Do you have any allergies
+Do you have any health concerns
+Are you pregnant
+Do you have PCOS
+Do you have celiacs desease
+Are you trying to lose weight
+Are you trying to gain muscle mass
+Are you trying to gain weight
+Are you trying to stay at your weight
+How old are you
+What is your gender
+What is your height
+What is your weight
+How many days do you want for the meal plan
+What information do you want listed
+How active are you
+-->
