@@ -20,6 +20,8 @@ export class FitnessFormComponent {
   age = "";
 
   goal = "";
+
+  phoneNumber = "";
   selectSkillLevel(value:string): void{
     this.skillLevel = value;
   }
@@ -42,6 +44,9 @@ export class FitnessFormComponent {
     this.healthConcerns = document.getElementById("healthConcerns").value;
     // @ts-ignore
     this.age = document.getElementById("age").value;
+
+    // @ts-ignore
+    this.phoneNumber = document.getElementById("phoneNumber").value;
 
     var sentence = "Create ";
 

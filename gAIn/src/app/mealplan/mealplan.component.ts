@@ -26,6 +26,8 @@ export class MealplanComponent {
   gender!: String | null
 
   healthConcerns!: String | null
+
+  phoneNumber!: String|null
   misc!: String | null
 
 
@@ -55,6 +57,9 @@ export class MealplanComponent {
     this.height = document.getElementById("height").value;
     // @ts-ignore
     this.weight = document.getElementById("weight").value;
+
+    // @ts-ignore
+    this.phoneNumber = document.getElementById("phoneNumber").value;
 
     // @ts-ignore
     this.healthConcerns = document.getElementById("healthConcerns").value;
