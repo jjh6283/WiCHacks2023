@@ -84,6 +84,7 @@ export class MealplanComponent {
 
     sentence+=" (please list the dietary information)"
 
+    console.log(sentence);
     const navigation: string[] = ['/resultpage'];
     if($myParam.length) {
       navigation.push($myParam);

@@ -67,6 +67,7 @@ export class FitnessFormComponent {
     if(this.upperBodyDays =="1") {sentence += " day a week with reps";}
     else{sentence += " days a week with reps";}
 
+    console.log(sentence);
     const navigation: string[] = ['/resultpage'];
     if($myParam.length) {
       navigation.push($myParam);
