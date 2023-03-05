@@ -1,7 +1,7 @@
 <div class="meal-plan page">
   <h3>
     Curate a Personal Meal Plan for the Week
-  </h3>
+  </h3><br><br>
 
   <div class="input-group mb-3">
     <!-- dietary restrictions -->
@@ -17,7 +17,7 @@
     <!-- show input box to enter other option -->
     <div *ngIf="restrictionState" >
       <form>
-        <input name="otherRestriction"/>
+        <input id  = "otherRestriction" name="otherRestriction"/>
       </form>
     </div>
   </div>
@@ -31,7 +31,7 @@
       <option value="maintain weight">Maintain Weight</option>
       <option value="lose weight">Lose Weight</option>
       <option value="gain weight">Gain Weight</option>
-      <option value="recomp">Body Recomposition</option>
+      <option value="body recomposition">Body Recomposition</option>
     </select>
   </div>
 
@@ -40,7 +40,7 @@
     Select your activity level
     <select #levels (change)="handleLevel(levels.value)">
       <option></option>
-      <option value="sedentary">Active</option>
+      <option value="sedentary">Sedentary</option>
       <option value="moderately active">Moderately Active</option>
       <option value="active">Active</option>
       <option value="very active">Very Active</option>
@@ -50,9 +50,9 @@
   <div class="input-group mb-3">
     <!-- specs -->
     Enter your physical specs
-    <input placeholder="Age" >
-    <input placeholder="Height">
-    <input placeholder="Weight">
+    <input id = "age" placeholder="Age" >
+    <input id = "height" placeholder="Height (ex: 5ft 6in)">
+    <input id = "weight" placeholder="Weight in pounds">
   </div>
 
   <div class="input-group mb-3">
@@ -69,7 +69,7 @@
     <!-- show input box to enter other option -->
     <div *ngIf="genderState">
       <form>
-        <input [(ngModel)]="gender" name="otherGender"/>
+        <input id = "otherGender" [(ngModel)]="gender" name="otherGender"/>
       </form>
     </div>
   </div>
@@ -77,7 +77,7 @@
   <form>
     Enter any health info that may affect your meal needs <br>
     Please delimit with commas
-    <input placeholder="Example: pcos, etc.">
+    <input id = "healthConcerns" placeholder="Example: pcos, etc.">
   </form>
 
 

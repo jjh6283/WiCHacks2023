@@ -1,7 +1,8 @@
-<h1>Let's make a fitness plan!</h1>
+<h1>Let's make a fitness plan!</h1><br><br>
 
+<div id = "theForm">
   <div class = "skillsDev">
-    <label >What skill level are you? :</label>
+    <label >What skill level are you? </label>
 
     <select #skills (change) = "selectSkillLevel(skills.value)">
       <option default></option>
@@ -13,7 +14,7 @@
   </div>
 
   <div class = "uppersDev">
-    <label>How many days do you want to do upper body? :</label>
+    <label>How many days do you want to do upper body? </label>
     <select #uppers (change) = "selectUpperBodyDays(uppers.value)">
       <option default></option>
       <option value="0">0</option>
@@ -28,7 +29,7 @@
   </div>
 
   <div class = "lowersDev">
-    <label >How many days do you want to do lower body? :</label>
+    <label >How many days do you want to do lower body? </label>
     <select #lowers (change) = "selectLowerBodyDays(lowers.value)">
       <option default></option>
       <option value="0">0</option>
@@ -43,7 +44,7 @@
   </div>
 
   <div class = "cardioDev">
-    <label >How many days do you want to do Cardio? :</label>
+    <label >How many days do you want to do Cardio? </label>
     <select  #cardio (change) = "selectCardioDays(cardio.value)">
       <option default></option>
       <option value="0">0</option>
@@ -58,15 +59,18 @@
   </div>
 
   <div class = "ageDiv">
-    <label>How old are you?):</label>
+    <label>How old are you? </label>
     <input type="text" id="age" name="ages"><br><br>
   </div>
 
   <div class = "healthConcernsDiv">
-    <label>Do you have any health concerns (you can list multiple):</label>
+    <label>Do you have any health concerns (you can list multiple)? </label>
     <input type="text" id="healthConcerns" name="healthConcerns"><br><br>
   </div>
 
 <button type="button" (click)="submitClicked()">Submit</button>
+
+
+</div>
 
 
