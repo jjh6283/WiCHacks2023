@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MealplanComponent } from './mealplan/mealplan.component';
 import { FormsModule } from "@angular/forms";
 import {RouterOutlet} from "@angular/router";
-//import { ResultpageComponent } from './resultpage/resultpage.component';
+import { ResultpageComponent } from './resultpage/resultpage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {RouterOutlet} from "@angular/router";
     MealplanComponent,
     HomeComponent,
     FitnessFormComponent,
-    //ResultpageComponent
+    ResultpageComponent
   ],
   imports: [
     BrowserModule,
